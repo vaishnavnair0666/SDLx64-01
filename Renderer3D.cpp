@@ -13,12 +13,10 @@ void Renderer3D::render() {
     auto time1 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration(0);
 
-    // Clear the screen
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(renderer, 0, 20, 20, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
 
-    // Set the draw color to white
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(renderer, 85, 0, 128, SDL_ALPHA_OPAQUE);
     rotation += 1 * DeltaTime;
 
     // Render the vertices
@@ -37,7 +35,7 @@ void Renderer3D::render() {
     time1 = time2;
 }
 Point3D Renderer3D::rotateX(Point3D point) {
-    Point3D returnPoint;
+    Point3D returnPoint{};
     returnPoint.x = point.x;
     returnPoint.y = cos(rotation) * point.y - sin(rotation) * point.z;
     returnPoint.z = sin(rotation) * point.y + cos(rotation) * point.z;
@@ -46,7 +44,7 @@ Point3D Renderer3D::rotateX(Point3D point) {
 
 Point3D Renderer3D::rotateY(Point3D point)
 {
-    Point3D returnPoint;
+    Point3D returnPoint{};
     returnPoint.x = cos(rotation) * point.x + sin(rotation) * point.z;
     returnPoint.y = point.y;
     returnPoint.z = -sin(rotation) * point.x + cos(rotation) * point.z;
@@ -54,7 +52,7 @@ Point3D Renderer3D::rotateY(Point3D point)
 }
 
 Point3D Renderer3D::rotateZ(Point3D point) {
-    Point3D returnPoint;
+    Point3D returnPoint{};
     returnPoint.x = cos(rotation) * point.x - sin(rotation) * point.y;
     returnPoint.y = sin(rotation) * point.x + cos(rotation) * point.y;
     returnPoint.z = point.z;
