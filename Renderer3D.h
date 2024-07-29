@@ -17,6 +17,10 @@ private:
 	Point3D rotateX(Point3D point);
 	Point3D rotateY(Point3D point);
 	Point3D rotateZ(Point3D point);
+	Point3D translateX(Point3D point);
+	Point3D translateY(Point3D point);
+	Point3D translateZ(Point3D point);
+
 	Point2D projection(Point3D point);
 
 	float rotation = 0.0f;

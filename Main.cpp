@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include "Renderer3D.h"
 //cube
-/*
+
 std::vector<Point3D> points = {
     Point3D{ -1.0f, -1.0f, -1.0f },
     Point3D{ 1.0f, -1.0f, -1.0f },
@@ -13,12 +13,12 @@ std::vector<Point3D> points = {
     Point3D{ -1.0f, 1.0f, 1.0f }
 };
 
-std::vector<Edge> vertices = {
+std::vector<Edge> edges = {
     Edge{ 0, 1 }, Edge{ 1, 2 }, Edge{ 2, 3 }, Edge{ 3, 0 },
     Edge{ 4, 5 }, Edge{ 5, 6 }, Edge{ 6, 7 }, Edge{ 7, 4 },
     Edge{ 0, 4 }, Edge{ 1, 5 }, Edge{ 2, 6 }, Edge{ 3, 7 }
 };
-*/
+/*
 std::vector<Point3D> points = {
     // Body
     Point3D{ -1.0f,  0.0f,  0.0f },  // 0: Head
@@ -57,7 +57,7 @@ std::vector<Edge> edges = {
     // Side Fins
     Edge{ 3, 12 }, Edge{ 7, 12 }, Edge{ 4, 13 }, Edge{ 8, 13 },
 };
-
+*/
 int main(int argc, char** argv) {
     SDL_Window* window;
     SDL_Renderer* renderer;

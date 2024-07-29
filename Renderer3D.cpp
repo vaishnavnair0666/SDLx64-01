@@ -21,8 +21,8 @@ void Renderer3D::render() {
 
     // Render the vertices
     for (auto& Edge : vertices) {
-        Point3D rotatedStartPoint = rotateX(rotateY(points[Edge.start]));
-        Point3D rotatedEndPoint = rotateX(rotateY(points[Edge.end]));
+        Point3D rotatedStartPoint = rotateX(rotateY(rotateZ(points[Edge.start])));
+        Point3D rotatedEndPoint = rotateX(rotateY(rotateZ(points[Edge.end])));
 
         Point2D start = projection(rotatedStartPoint);
         Point2D end = projection(rotatedEndPoint);
@@ -57,6 +57,21 @@ Point3D Renderer3D::rotateZ(Point3D point) {
     returnPoint.y = sin(rotation) * point.x + cos(rotation) * point.y;
     returnPoint.z = point.z;
     return returnPoint;
+}
+
+Point3D Renderer3D::translateX(Point3D point)
+{
+    return Point3D();
+}
+
+Point3D Renderer3D::translateY(Point3D point)
+{
+    return Point3D();
+}
+
+Point3D Renderer3D::translateZ(Point3D point)
+{
+    return Point3D();
 }
 
 Point2D Renderer3D::projection(Point3D point)
